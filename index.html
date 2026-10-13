@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цветочный Магазин</title>
+    
+    
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="header-left">
+            <button class="catalog-btn">
+                <span class="burger-icon">≡</span> Каталог
+            </button>
+            <div class="logo">Цветочный</div>
+        </div>
+
+        <div class="header-center">
+            <div class="search-bar">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Поиск товаров">
+            </div>
+        </div>
+
+        <div class="header-right">
+            <div class="icon-btn">🛒</div>
+            <div class="icon-btn">🚚</div>
+            <div class="icon-btn">👤</div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <div class="container">
+        
+        <!-- Сайдбар с фильтрами -->
+        <aside class="sidebar">
+            <div class="filter-section">
+                <h3>Цена</h3>
+                <div class="price-range">
+                    <span>0</span>
+                    <input type="range" min="0" max="30000" value="15000" class="slider">
+                    <span>30000+</span>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>БУКЕТЫ ЦВЕТОВ</h3>
+                <ul>
+                    <li>Букеты из роз</li>
+                    <li>Гортензии</li>
+                    <li>Тюльпаны</li>
+                    <li>Пионы</li>
+                    <li>Хризантемы</li>
+                    <li>Альстромерии</li>
+                    <li>Герберы</li>
+                    <li>Лилии</li>
+                    <li>Эустомы</li>
+                    <li>Розы премиум</li>
+                    <li>Кустовые розы</li>
+                    <li>Подсолнухи</li>
+                    <li>Орхидеи</li>
+                </ul>
+            </div>
+
+            <div class="filter-section">
+                <h3>Композиции</h3>
+                <ul>
+                    <li>Авторские букеты</li>
+                    <li>Цветы в коробках</li>
+                    <li>Цветы в корзинах</li>
+                </ul>
+            </div>
+
+            <div class="filter-section">
+                <h3>Сухоцветы</h3>
+                <ul>
+                    <li>Гипсофилы</li>
+                    <li>Лаванды</li>
+                    <li>Эвкалипты</li>
+                    <li>Хлопок</li>
+                    <li>Камыш</li>
+                </ul>
+            </div>
+
+            <div class="filter-section">
+                <h3>Домашние растения</h3>
+                <ul>
+                    <li>Паппоротники</li>
+                    <li>Фикусы</li>
+                    <li>Алоэ</li>
+                    <li>Азалии</li>
+                    <li>Плющ</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Каталог товаров -->
+        <main class="products-grid">
+            
+            <div class="product-card">
+                <img src="data:image/jpeg;base64,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" alt="Букет из 9 белых пионов">
+                <h4>Букет из 9 белых пионов</h4>
+                <p class="price">8 435 ₽</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.pinimg.com/474x/67/f4/0d/67f40db42b95969c9a34ae72450d062d.jpg" alt="Букет из 15 белых роз">
+                <h4>Букет из 15 белых роз</h4>
+                <p class="price">5 300 ₽</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://nflo.ru/upload/iblock/bd6/9fonlbeehtt9ga54ytmmxf5dsrr5dx4h.webp">
+                <h4>Букет из 15 тюльпанов</h4>
+                <p class="price">2 500 ₽</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://content2.flowwow-images.com/data/flowers/1000x1000/91/1755602595_55298391.jpg" alt="Букет из 9 гербер">
+                <h4>Букет из 9 гербер</h4>
+                <p class="price">3 200 ₽</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://lillepidu.ee/wp-content/uploads/2016/10/Kimp-Punaste-roosidega2.jpg" alt="Букет из 15 красных роз">
+                <h4>Букет из 15 красных роз</h4>
+                <p class="price">4 700 ₽</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://avatars.mds.yandex.net/get-mpic/4343059/2a00000191dc15db413ba7eb139c60bb4cdf/orig" alt="Букет из 11 эустомий">
+                <h4>Букет из 11 эустомий</h4>
+                <p class="price">5 000 ₽</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://azalianow.ru/images/15941f99-c4d3-40ac-9586-6e7ed7c42516_small.webp" alt="Букет из 7 нарциссов">
+                <h4>Букет из 7 нарциссов</h4>
+                <p class="price">1 800 ₽</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://storage.florist.ru/f/get/supplier/1589/products/0/20/4b/_f6d8f90f0355131133b50efc5037/6a7a840cdcf0b.jpeg" alt="Букет из 9 георгинов">
+                <h4>Букет из 9 георгинов</h4>
+                <p class="price">3 900 ₽</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://content2.flowwow-images.com/data/flowers/524x524/81/1769439851_98748881.jpg" alt="Букет из 9 фрезий с зеленью">
+                <h4>Букет из 9 фрезий с зеленью</h4>
+                <p class="price">2 500 ₽</p>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>
