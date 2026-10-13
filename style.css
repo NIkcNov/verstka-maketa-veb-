@@ -1,0 +1,232 @@
+/* Общие сбросы и переменные */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #f3e8f5;
+    --header-bg: #dca3e6;
+    --search-bg: #e5b6e8;
+    --text-dark: #333333;
+    --text-purple: #6a1b9a;
+    --card-bg: #ffffff;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+}
+
+/* Шапка */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--header-bg);
+    padding: 10px 30px;
+    height: 70px;
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.catalog-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--text-purple);
+    cursor: pointer;
+}
+
+.burger-icon {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.logo {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: white;
+    padding: 5px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--search-bg);
+    border-radius: 20px;
+    padding: 8px 15px;
+    width: 400px;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    margin-left: 10px;
+    font-size: 16px;
+    color: white;
+}
+
+.search-bar input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.search-icon {
+    color: white;
+}
+
+.icon-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+}
+
+/* Основной контейнер */
+.container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
+    gap: 30px;
+}
+
+/* Сайдбар */
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.filter-section {
+    margin-bottom: 25px;
+}
+
+.filter-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.price-range {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    color: var(--text-purple);
+}
+
+.slider {
+    width: 100%;
+    margin: 10px 0;
+    accent-color: var(--text-purple);
+}
+
+.filter-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: var(--text-dark);
+}
+
+.filter-section ul li {
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.filter-section ul li:hover {
+    color: var(--text-purple);
+}
+
+/* Сетка товаров */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    flex-grow: 1;
+}
+
+/* Карточка товара */
+.product-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product-card h4 {
+    font-size: 15px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+
+.product-card .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+    }
+    .header-center {
+        display: none; 
+    }
+}
+
+@media (max-width: 500px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
